@@ -144,7 +144,7 @@ async def varget_(client, message):
 
 @app.on_message(filters.command("del_var") & filters.user(SUDOERS))
 async def vardel_(client, message):
-    usage = "**Usage:**\n/del_var [Var Name]"
+    usage = "**Kullanım:**\n/del_var [Var Name]"
     if len(message.command) != 2:
         return await message.reply_text(usage)
     check_var = message.text.split(None, 2)[1]
@@ -185,7 +185,7 @@ async def vardel_(client, message):
 
 @app.on_message(filters.command("set_var") & filters.user(SUDOERS))
 async def set_var(client, message):
-    usage = "**Usage:**\n/set_var [Var Name] [Var Value]"
+    usage = "**Kullanım:**\n/set_var [Var Name] [Var Value]"
     if len(message.command) < 3:
         return await message.reply_text(usage)
     to_set = message.text.split(None, 2)[1].strip()
@@ -193,11 +193,11 @@ async def set_var(client, message):
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your app, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
+                "<b>HEROKU UYGULAMASI ALGILANDI!</b>\n\nUygulamanızı güncellemek için `HEROKU_API_KEY` ve `HEROKU_APP_NAME` sırasıyla ekle!"
             )
         elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
             return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
+                "<b>HEROKU UYGULAMASI ALGILANDI!</b>\n\n<b>Her ikisini de eklediğinizden emin olun</b> `HEROKU_API_KEY` **ve** `HEROKU_APP_NAME` <b>uzaktan güncelleştirebilmek için doğru şekilde varsları ekle!</b>"
             )
         try:
             Heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -209,11 +209,11 @@ async def set_var(client, message):
         heroku_config = happ.config()
         if to_set in heroku_config:
             await message.reply_text(
-                f"**Heroku Var Updation:**\n\n`{to_set}` has been updated successfully. Bot will Restart Now."
+                f"**Heroku Var Updation:**\n\n`{to_set}` başarıyla güncelleştirildi. Bot Şimdi Yeniden Başlatılacak."
             )
         else:
             await message.reply_text(
-                f"Added New Var with name `{to_set}`. Bot will Restart Now."
+                f"Adla Yeni Var eklendi `{to_set}`. Bot Şimdi Yeniden Başlatılacak."
             )
         heroku_config[to_set] = value
     else:
@@ -222,7 +222,7 @@ async def set_var(client, message):
             return await message.reply_text(".env not found.")
         output = dotenv.set_key(path, to_set, value)
         if dotenv.get_key(path, to_set):
-            return await message.reply_text(f"**.env Var Updation:**\n\n`{to_set}`has been updated successfully. To restart the bot touch /restart command.")
+            return await message.reply_text(f"**.env Var  Güncelleştirmesi:**\n\n`{to_set}`başarıyla güncelleştirildi. Bot dokunuşunu yeniden başlatmak için /restart komut.")
         else:
             return await message.reply_text(f"**.env dəyişən əlavə edilməsi:**\n\n`{to_set}` has been added sucsessfully. To restart the bot touch /restart command.")
 
@@ -233,11 +233,11 @@ async def usage_dynos(client, message):
     if await is_heroku():
         if HEROKU_API_KEY == "" and HEROKU_APP_NAME == "":
             return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\nIn order to update your app, you need to set up the `HEROKU_API_KEY` and `HEROKU_APP_NAME` vars respectively!"
+                "<b>HEROKU UYGULAMASI ALGILANDI!</b>\n\nUygulamanızı güncellemek için `HEROKU_API_KEY` ve `HEROKU_APP_NAME` sırasıyla ekle!"
             )
         elif HEROKU_API_KEY == "" or HEROKU_APP_NAME == "":
             return await message.reply_text(
-                "<b>HEROKU APP DETECTED!</b>\n\n<b>Make sure to add both</b> `HEROKU_API_KEY` **and** `HEROKU_APP_NAME` <b>vars correctly in order to be able to update remotely!</b>"
+                "<b>HEROKU UYGULAMASI ALGILANDI!</b>\n\n<b>Her ikisini de eklediğinizden emin olun</b> `HEROKU_API_KEY` **ve** `HEROKU_APP_NAME` <b>uzaktan güncelleştirebilmek için doğru şekilde vars ekle!</b>"
             )
     else:
         return await message.reply_text("Only for Heroku Apps")
@@ -246,9 +246,9 @@ async def usage_dynos(client, message):
         happ = Heroku.app(HEROKU_APP_NAME)
     except BaseException:
         return await message.reply_text(
-            " Please make sure your Heroku API Key, Your App name are configured correctly in the heroku"
+            " Lütfen Heroku API Anahtarınızın, Uygulama adınızın heroku'da doğru yapılandırıldığından emin olun"
         )
-    dyno = await message.reply_text("Checking Heroku Usage. Please Wait")
+    dyno = await message.reply_text("Heroku Kullanımı Kontrol Ediliyor. Lütfen bekleyin")
     account_id = Heroku.account().id
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
@@ -285,12 +285,12 @@ async def usage_dynos(client, message):
     AppMinutes = math.floor(AppQuotaUsed % 60)
     await asyncio.sleep(1.5)
     text = f"""
-**DYNO USAGE**
+**DYNO KULLANIMI**
 
-<u>Usage:</u>
-Total Used: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
+<u>Kullanım:</u>
+Kullanılan Toplam: `{AppHours}`**h**  `{AppMinutes}`**m**  [`{AppPercentage}`**%**]
 
-<u>Remaining Quota:</u>
+<u>Kalan Kota:</u>
 Total Left: `{hours}`**h**  `{minutes}`**m**  [`{percentage}`**%**]"""
     return await dyno.edit(text)
 
