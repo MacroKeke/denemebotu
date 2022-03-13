@@ -69,7 +69,7 @@ async def start_stream(
         return
     else:
         if not await join_stream(CallbackQuery.message.chat.id, file):
-            return await mystic.edit("Error Joining Voice Chat.")
+            return await mystic.edit("Sesli Sohbete Katılma Hatası.")
         get_queue[CallbackQuery.message.chat.id] = []
         got_queue = get_queue.get(CallbackQuery.message.chat.id)
         title = title
