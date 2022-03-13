@@ -423,7 +423,7 @@ async def restart_(_, message):
             try:
                 await app.send_message(
                     x,
-                    f"{MUSIC_BOT_NAME} kendini yeniden başlattı. Sorunlar için üzgünüz.\n\n10-15 saniye sonra yeniden Başlıyor." Lütfen bekleyiniz.,"
+                    f"{MUSIC_BOT_NAME} kendini yeniden başlattı. Sorunlar için üzgünüm..\n\n10-15 saniye sonra tekrar oynamaya başlayın.",
                 )
                 await remove_active_chat(x)
                 await remove_active_video_chat(x)
