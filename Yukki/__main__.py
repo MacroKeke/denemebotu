@@ -94,7 +94,7 @@ async def initiate_bot():
             status="[bold blue]Alma Tamamlandı!",
         )
     console.print(
-        "[bold green]Tebrikler!! Efsane Music Bot başarıyla başladı!\n"
+        "[bold green]Tebrikler!! Oxygen Music Bot başarıyla başladı!\n"
     )
     try:
         await app.send_message(
@@ -127,8 +127,8 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await ASS_CLI_1.join_chat("Sohbetskyfall")
-            await ASS_CLI_1.join_chat("Sohbetdestek")
+            await ASS_CLI_1.join_chat("zkusagisohbet")
+            await ASS_CLI_1.join_chat("zkusagisohbet")
         except:
             pass
         console.print(f"├[red] Asistan 1 Olarak Başladı {ASSNAME1}!")
@@ -146,8 +146,8 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await ASS_CLI_2.join_chat("Sohbetskyfall")
-            await ASS_CLI_2.join_chat("Sohbetdestek")
+            await ASS_CLI_2.join_chat("zkusagisohbet")
+            await ASS_CLI_2.join_chat("zkusagisohbet")
         except:
             pass
         console.print(f"├[red] Asistan 2 Olarak Başladı {ASSNAME2}!")
@@ -165,8 +165,8 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await ASS_CLI_3.join_chat("Sohbetskyfall")
-            await ASS_CLI_3.join_chat("Sohbetdestek")
+            await ASS_CLI_3.join_chat("zkusagisohbet")
+            await ASS_CLI_3.join_chat("zkusagisohbet")
         except:
             pass
         console.print(f"├[red] Asistan 3 Olarak Başladı {ASSNAME3}!")
@@ -184,8 +184,8 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await ASS_CLI_4.join_chat("Sohbetskyfall")
-            await ASS_CLI_4.join_chat("Sohbetdestek")
+            await ASS_CLI_4.join_chat("zkusagisohbet")
+            await ASS_CLI_4.join_chat("zkusagisohbet")
         except:
             pass
         console.print(f"├[red] Asistan 4 Olarak Başladı {ASSNAME4}!")
@@ -203,8 +203,8 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await ASS_CLI_5.join_chat("Sohbetskyfall")
-            await ASS_CLI_5.join_chat("Sohbetdestek")
+            await ASS_CLI_5.join_chat("zkusagisohbet")
+            await ASS_CLI_5.join_chat("zkusagisohbet")
         except:
             pass
         console.print(f"├[red] Asistan 5 Olarak Başladı {ASSNAME5}!")
@@ -222,11 +222,11 @@ async def initiate_bot():
             console.print(f"\n[red]Bot Durduruluyor")
             return
         try:
-            await LOG_CLIENT.join_chat("Sohbetskyfall")
-            await LOG_CLIENT.join_chat("Sohbetdestek")
+            await LOG_CLIENT.join_chat("zkusagisohbet")
+            await LOG_CLIENT.join_chat("zkusagisohbet")
         except:
             pass
-    console.print(f"└[red] Talia Winamp Müzik Botu Önyüklemesi Tamamlandı.")
+    console.print(f"└[red] Oxygen Müzik Botu Önyüklemesi Tamamlandı.")
     if STRING1 != "None":
         await pytgcalls1.start()
     if STRING2 != "None":
