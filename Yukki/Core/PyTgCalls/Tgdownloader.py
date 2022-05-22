@@ -10,7 +10,7 @@ from Yukki.Utilities.ping import get_readable_time
 
 
 async def telegram_download(message, mystic):
-    ### Talia Music tarafından yapılan yazılımlar
+    ### Oxygen Music tarafından yapılan yazılımlar
     left_time = {}
     speed_counter = {}
 
