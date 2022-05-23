@@ -369,7 +369,7 @@ async def start_command(_, message):
             reply_markup=InlineKeyboardMarkup(out[1]),
         )
     else:
-        await message.reply_photo()
+        await message.reply_photo(
             photo=START_IMG_URL,
             caption=home_text_pm,
             reply_markup=InlineKeyboardMarkup(out[1]),
