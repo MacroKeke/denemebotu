@@ -69,7 +69,7 @@
     },
     "START_IMG_URL": {
       "description": "Telegraph Image Link for the Private Start Message",
-      "value": "https://i.ibb.co/khRz42f/Turkish-Voice.jpg",
+      "value": "https://ibb.co/C83gx2y",
       "required": true
     },
     "STRING_SESSION1": {
@@ -124,7 +124,7 @@
     },
     "UPSTREAM_REPO": {
       "description": "If you dont know this, Leave as it is",
-      "value": "https://github.com/Alfa00006/TaliaVaves",
+      "value": "https://github.com/Samilx01/denemebotu",
       "required": true
     },
     "UPSTREAM_BRANCH": {
